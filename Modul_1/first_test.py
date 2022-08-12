@@ -21,7 +21,10 @@ def my_sum(list_of_numbers):
     Не использовать встроенные функции суммирования.
     
     """
-    return sum(list_of_numbers)
+    total = 0
+    for num in list_of_numbers:
+        total += num
+    return total
 
 
 def shortener(string):
