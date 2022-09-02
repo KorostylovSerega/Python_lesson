@@ -131,28 +131,33 @@ if __name__ == '__main__':
     print(dev3.work())
     print()
 
+    # comparison by salary
     print(emp1 > emp2)
     print(rec1 > rec2)
-    print(dev1 > dev2) # comparison by salary
-    print(dev3 > dev4) # comparison by tech_stack
     print(emp1 < rec2)
-    print(emp1 < rec2 < dev1) # comparison by salary
-    print()
-    
-    print(rec2) # __str__
-    print(dev3) # __str__
-    print()
-
-    print(emp1.check_salary(10)) # salary for 10 days
-    print(rec2.check_salary([31, 8, 2022])) # salary for august
-    print(rec1.check_salary(['31', '08', '2022'])) # salary for august
-    print(dev2.check_salary()) # salary from the first day of the month until today
+    print(emp1 < rec2 < dev1)
+    print(dev1 > dev2)
+    # comparison by tech_stack 
+    print(dev3 > dev4)
     print()
 
-    print((dev3 + dev4).__dict__) # new object
-    print((dev1 + dev2).__dict__) # new object
-    print((dev1 + dev2 + dev3 + dev4).__dict__) # new object
+    # __str__
+    print(rec2)
+    print(dev3)
+    print()
+
+    # salary for 10 days
+    print(emp1.check_salary(10))
+    # salary for august
+    print(rec2.check_salary([31, 8, 2022])) 
+    print(rec1.check_salary(['31', '08', '2022']))
+    # salary from the first day of the month until today
+    print(dev2.check_salary())
+    print()
+
+    # new object
+    print((dev3 + dev4).__dict__)
+    print((dev1 + dev2).__dict__)
+    print((dev1 + dev2 + dev3 + dev4).__dict__)
 
 
-
-    
