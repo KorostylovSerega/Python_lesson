@@ -30,7 +30,7 @@ class Employee:
     def work(self) -> str:
         return 'I come to the office.'
 
-    def check_salary(self, days: [int, list] = None) -> int:       # days = [d, m, yyyy] or days = int
+    def check_salary(self, days: [int, list] = None) -> int:  # days = [d, m, yyyy] or days = int
         if isinstance(days, int):
             return self.salary*days
 
@@ -44,7 +44,7 @@ class Employee:
             raise TypeError('check_salary() expects a data type int or list')
 
         weekdays = calendar.Calendar().itermonthdays2(int(y), int(m))
-        days = sum([1 for day in weekdays if 0<day[0]<=int(d) and day[1] not in (5, 6)])
+        days = sum([1 for day in weekdays if 0<day[0]<=int(d) and day[1] not in (5, 6)])  # including today
         return self.salary*days
 
 
@@ -138,7 +138,7 @@ if __name__ == '__main__':
     print(dev1>dev2) # comparison by salary
     print(dev3>dev4) # comparison by tech_stack
     print(emp1<rec2)
-    print(emp1<rec2 and rec2<dev1) # comparison by salary
+    print(emp1<rec2<dev1) # comparison by salary
     print()
     
     print(rec2) # __str__
@@ -152,4 +152,5 @@ if __name__ == '__main__':
     print()
 
     print((dev3+dev4).__dict__) # new object
-    print((dev1+dev2).__dict__) # new object    
+    print((dev1+dev2).__dict__) # new object
+    print((dev1+dev2+dev3+dev4).__dict__) # new object
