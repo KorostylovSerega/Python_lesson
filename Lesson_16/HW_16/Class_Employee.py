@@ -1,5 +1,8 @@
-from datetime import date as dt
+"""
+Lesson 16 HW Class Employee
+"""
 import calendar
+from datetime import date as dt
 
 
 class Employee:
@@ -26,26 +29,24 @@ class Employee:
     def __ge__(self, other) -> bool:
         return self.salary >= other.salary
 
-
     def work(self) -> str:
         return 'I come to the office.'
 
-    def check_salary(self, days: [int, list] = None) -> int:  # days = [d, m, yyyy] or days = int
-        if isinstance(days, int):
-            return self.salary*days
+    def check_salary(self, days: [int, list] = None) -> int:
+    #Example: days = [d, m, yyyy] or days = int
 
+        if isinstance(days, int):
+            return self.salary * days
         elif isinstance(days, list):
             d, m, y = days
-
         elif days is None:
             y, m, d  = str(dt.today()).split('-')
-
         else:
             raise TypeError('check_salary() expects a data type int or list')
 
         weekdays = calendar.Calendar().itermonthdays2(int(y), int(m))
-        days = sum([1 for day in weekdays if 0<day[0]<=int(d) and day[1] not in (5, 6)])  # including today
-        return self.salary*days
+        days = sum([1 for day in weekdays if 0 < day[0] <= int(d) and day[1] not in (5, 6)])
+        return self.salary * days
 
 
 class Recruiter(Employee):
@@ -55,7 +56,6 @@ class Recruiter(Employee):
 
     def __str__(self) -> str:
         return f'{__class__.__name__}: {self.name}'
-
 
     def work(self) -> str:
         return 'I come to the office and start to hiring.'
@@ -111,10 +111,8 @@ class Developer(Employee):
         else:        
             return len(self.tech_stack) >= len(other.tech_stack)
 
-
     def work(self) -> str:
         return 'I come to the office and start to coding.'
-
 
 
 if __name__ == '__main__':
@@ -133,12 +131,12 @@ if __name__ == '__main__':
     print(dev3.work())
     print()
 
-    print(emp1>emp2)
-    print(rec1>rec2)
-    print(dev1>dev2) # comparison by salary
-    print(dev3>dev4) # comparison by tech_stack
-    print(emp1<rec2)
-    print(emp1<rec2<dev1) # comparison by salary
+    print(emp1 > emp2)
+    print(rec1 > rec2)
+    print(dev1 > dev2) # comparison by salary
+    print(dev3 > dev4) # comparison by tech_stack
+    print(emp1 < rec2)
+    print(emp1 < rec2 < dev1) # comparison by salary
     print()
     
     print(rec2) # __str__
@@ -151,6 +149,10 @@ if __name__ == '__main__':
     print(dev2.check_salary()) # salary from the first day of the month until today
     print()
 
-    print((dev3+dev4).__dict__) # new object
-    print((dev1+dev2).__dict__) # new object
-    print((dev1+dev2+dev3+dev4).__dict__) # new object
+    print((dev3 + dev4).__dict__) # new object
+    print((dev1 + dev2).__dict__) # new object
+    print((dev1 + dev2 + dev3 + dev4).__dict__) # new object
+
+
+
+    
