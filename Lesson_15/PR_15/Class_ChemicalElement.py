@@ -4,8 +4,7 @@
 class ChemicalElement:
     """
     This class stores the parameters of chemical elements.
-    """
-    
+    """    
     name = 'chemical element'
 
     def __init__(self, melting_t: [int, bool],
@@ -15,10 +14,11 @@ class ChemicalElement:
         of the class object.
 
         Input Arguments:
-            melting_t (int, bool): element melting point
-            boling_t (int, bool): element boiling point        
+            melting_t: int, bool
+                Element melting point
+            boling_t: int, bool
+                Element boiling point        
         """
-
         self.melting_t = melting_t
         self.boling_t = boling_t
 
@@ -40,7 +40,6 @@ class ChemicalElement:
             str: Aggregate state of the element
                 at the current temperature
         """
-
         if unit:
             temp = self.temp_converter(temp, unit)
 
@@ -70,7 +69,6 @@ class ChemicalElement:
         Returns:
             int, bool: Temperature in Celsius  
         """
-
         if unit:
             if unit in 'Kk':
                 return round(temp - 273.15, 1)
