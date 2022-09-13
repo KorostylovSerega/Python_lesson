@@ -58,7 +58,7 @@ class Candidate:
         Return:
             list: List of created objects
         """
-        if 'http' in file_path:
+        if file_path.startswith('http'):
             file = urlopen(file_path)
             reader = csv.reader(codecs.iterdecode(file, 'utf-8'))
             next(reader)

@@ -15,7 +15,7 @@ def generator_by_url(func):
     def wrapper(*args, **kwargs):
         cls = args[0] if args else kwargs['cls']
         path = args[1] if args else kwargs['file_path']
-        if 'http' in path:
+        if path.startswith('http'):
             file = urlopen(path)
             reader = csv.reader(codecs.iterdecode(file, 'utf-8'))
             next(reader)
