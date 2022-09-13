@@ -1,5 +1,3 @@
-""""HW 19 test file"""
-
 import candidate_class_ver1 as ccv1
 import candidate_class_ver2 as ccv2
 
@@ -10,7 +8,7 @@ if __name__ == '__main__':
     print(Guido.__dict__)
     print(Guido.full_name)
     # creating instances from a file in a directory
-    candidates = ccv1.Candidate.generate_candidate()
+    candidates = ccv1.Candidate.generate_candidate('Candidates.csv')
     print(candidates)
     for obj in candidates:
         print(obj.full_name)

@@ -46,31 +46,33 @@ class Candidate:
         return f'{self.first_name} {self.last_name}'
 
     @classmethod
-    def generate_candidate(cls, file_path: str = None) -> list:
+    def generate_candidate(cls, file_path) -> list:
         """
         This method creates new instances of the candidate class.
 
         Input Arguments:
-            file_path: str(=None)
-                Path to the *csv candidate data file
+            file_path: str
+                Path to the *csv candidate data file in directory,
+                 or url
 
         Return:
             list: List of created objects
         """
-        objects = []
-        if file_path is None:
-            with open('Candidates.csv', newline='') as file:
-                reader = csv.reader(file, delimiter=',')
-                next(reader)
-                for row in reader:
-                    objects.append(cls(row[0].split()[0], row[0].split()[1],
-                                       row[1], row[2].split('|'), row[3], row[4]))
-                return objects
-        else:
+        if 'http' in file_path:
             file = urlopen(file_path)
             reader = csv.reader(codecs.iterdecode(file, 'utf-8'))
             next(reader)
+            objects = []
             for row in reader:
                 objects.append(cls(row[0].split()[0], row[0].split()[1],
                                    row[1], row[2].split('|'), row[3], row[4]))
             return objects
+        else:
+            with open(file_path, newline='') as file:
+                reader = csv.reader(file, delimiter=',')
+                next(reader)
+                objects = []
+                for row in reader:
+                    objects.append(cls(row[0].split()[0], row[0].split()[1],
+                                       row[1], row[2].split('|'), row[3], row[4]))
+                return objects
