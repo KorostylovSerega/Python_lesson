@@ -1,0 +1,170 @@
+@font-face {
+    font-family: "PlayfairDisplay";
+    src: url("../fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PlayfairDisplayItalic";
+    src: url("../fonts/PlayfairDisplay-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.menu {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.menu li a {
+    font-family: PlayfairDisplay, sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    color: #000000;
+    padding: 1em;
+    display: block;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background: #c3c4c7;
+    border-radius: 20px;
+}
+
+
+.main-block {
+    display: flex;
+    width: 720px;
+    height: 90vh;
+    padding: 20px;
+    margin: 0 auto ;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 350px;
+    height: 500px;
+    margin: 0 auto;
+    box-shadow: 10px 10px 10px 5px gray;
+    border-radius: 10px;
+}
+
+.container:hover {
+    height: 85vh;
+}
+
+.container:hover p {
+    overflow: visible;
+    display: inherit;
+    font-weight: bold;
+}
+
+.container:hover img{
+    transform: scale(1.1);
+}
+
+.container img{
+    transition: all 1s ease;
+    width: 350px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.container h2{
+    width: 350px;
+    font-family: PlayfairDisplay, sans-serif;
+    font-size: 24px;
+    margin: 15px 30px;
+}
+
+.container time{
+    width: 350px;
+    font-family: PlayfairDisplayItalic, sans-serif;
+    font-weight:bold;
+    font-size: 14px;
+    margin: 15px 30px;
+}
+
+.container p{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+    font-family: PlayfairDisplay, sans-serif;
+    margin: 10px 20px 0 30px;
+}
+
+
+.homework {
+    margin: 30px 25%;
+}
+
+.homework h1{
+    font-family: PlayfairDisplayI, sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.homework h2 {
+    font-family: PlayfairDisplay, sans-serif;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    background: black;
+    border-radius: 20px;
+}
+
+.homework ol > li{
+    list-style-type: none;
+}
+
+.homework ol li a {
+    text-decoration: none;
+    color: #000000;
+    font-family: PlayfairDisplayItalic, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.homework ol li a:hover {
+    font-size: 27px;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 30px;
+    background: #000000;
+}
+
+.homework ol li p {
+    font-family: PlayfairDisplay, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.homework ol li ul {
+    font-family: PlayfairDisplayItalic, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+.selector {
+    margin: 30px 25%;
+}
+
+.selector h2 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.selector pre code {
+    justify-content: center;
+    font-family: PlayfairDisplay, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #8a2424;
+}
